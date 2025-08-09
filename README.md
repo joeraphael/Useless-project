@@ -63,13 +63,68 @@ For Software:
 [commands]
 
 # Run
-[commands]
+#include <Servo.h>
+
+Servo myServo;
+
+// Ultrasonic Sensor Pins
+const int trigPin = 9;
+const int echoPin = 10;
+
+// Servo positions
+int servoHome = 90;   // Center position
+int servoRotate = 0;  // 90° anticlockwise
+
+void setup() {
+  myServo.attach(3);   // Servo signal pin
+  pinMode(trigPin, OUTPUT);
+  pinMode(echoPin, INPUT);
+  
+  myServo.write(servoHome); // Start at home position
+  Serial.begin(9600);
+}
+
+void loop() {
+  long duration;
+  float distance;
+
+  // Trigger the ultrasonic pulse
+  digitalWrite(trigPin, LOW);
+  delayMicroseconds(2);
+  digitalWrite(trigPin, HIGH);
+  delayMicroseconds(10);
+  digitalWrite(trigPin, LOW);
+
+  // Read echo pulse
+  duration = pulseIn(echoPin, HIGH);
+
+  // Convert to centimeters
+  distance = duration * 0.034 / 2;
+
+  Serial.print("Distance: ");
+  Serial.print(distance);
+  Serial.println(" cm");
+
+  if (distance > 0 && distance < 10) {
+    // Object is closer than 10 cm
+    myServo.write(servoRotate); 
+  } 
+  else if (distance >= 10) {
+    // Object is farther than or equal to 10 cm
+    myServo.write(servoHome);  
+  }
+
+  delay(100);
+}
+This project intentionally defies logic by requiring the least practical condition (an upside-down mug) for operation. While it serves no functional purpose in real-world water dispensing, it successfully demonstrates creativity, sensor integration, and actuator control in a humorous and engaging way.
+
+
 
 ### Project Documentation
 For Software:
 
 # Screenshots (Add at least 3)
-![Screenshot1](Add screenshot 1 here with proper name)
+![Screenshot1][(Add screenshot 1 here with proper name)](https://drive.google.com/file/d/1CbRRszoM5N_8_yfXOdfnRAZofcMpY7E_/view?usp=drivesdk)
 *Add caption explaining what this shows*
 
 ![Screenshot2](Add screenshot 2 here with proper name)
@@ -85,7 +140,7 @@ For Software:
 For Hardware:
 
 # Schematic & Circuit
-![Circuit](Add your circuit diagram here)
+(https://drive.google.com/file/d/1EgPqHo0GpD2PC7TC87tnEJEGSm_znDTC/view?usp=drivesdk)
 *Add caption explaining connections*
 
 ![Schematic](Add your schematic diagram here)
@@ -103,7 +158,7 @@ For Hardware:
 
 ### Project Demo
 # Video
-[Add your demo video link here]
+[[Add your demo video link here]](https://drive.google.com/file/d/1d9FXFFxkHVLNAydoRXGU93XNBtn-Fnr8/view?usp=drivesdk)
 *Explain what the video demonstrates*
 
 # Additional Demos
