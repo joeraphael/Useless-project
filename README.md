@@ -6,33 +6,54 @@
 
 
 ## Basic Details
-### Team Name: [Name]
+### Team Name: BIT JUNKIES
 
 
 ### Team Members
-- Team Lead: [Name] - [College]
-- Member 2: [Name] - [College]
-- Member 3: [Name] - [College]
+- Team Lead: JOE RAPHAEL JOSHY - CE VADAKARA
+- Member 2: VIMAL DEV AS - CE VADAKARA
 
 ### Project Description
-[2-3 lines about what your project does]
+This is a playful and impractical water dispenser that only works when your mug is held upside down. Instead of filling your cup normally, it challenges common sense by activating the water flow only in the least useful position possible, making it a perfect example of a “useless” engineering concept. Built purely for humor and curiosity, it’s a fun reminder that not all inventions are meant to be practical.
 
 ### The Problem (that doesn't exist)
-[What ridiculous problem are you solving?]
-
+“People have had it far too easy filling cups the right way up. The world desperately needs a device that challenges basic logic and tests patience. By creating a water dispenser that only works when your mug is upside down, we solve the non-existent problem of making hydration inconvenient, messy, and mildly absurd.”
 ### The Solution (that nobody asked for)
-[How are you solving it? Keep it fun!]
-
+“I’m solving it by building a high-tech, logic-defying dispenser that uses sensors to detect when your mug is upside down—only then will it graciously unleash a refreshing stream of water… straight onto the floor. It’s the perfect mix of engineering skill and complete uselessness.”
 ## Technical Details
 ### Technologies/Components Used
 For Software:
-- [Languages used]
-- [Frameworks used]
-- [Libraries used]
-- [Tools used]
+- C++
+- AURDINO UNO
+- Servo.h – To control a servo motor that opens/closes the water valve.
+
+LiquidCrystal.h (optional) – If you want an LCD display to show fun messages.
+
+Wire.h – For I²C communication (used if your LCD or sensors require it).
+
+Adafruit_Sensor.h – If you’re using certain orientation or tilt sensors.
+
+Adafruit_MPU6050.h or MPU6050.h – For detecting if the mug is upside down using a gyroscope/accelerometer sensor.
+- Multimeter – For checking voltages and connections.
+
+Screwdriver / Wire Cutter / Stripper – For preparing and assembling parts.
+
+Soldering Kit – Only if you need permanent connections.
+
+
 
 For Hardware:
-- [List main components]
+- For your **ultrasonic sensor + servo motor** project, here’s a short and catchy tagline:
+
+**"Smart Motion, Precise Action."**
+
+Or, if you want it to sound more fun and attention-grabbing:
+
+**"Detect. Decide. Move."**
+
+I can also give you **5 more creative options** tailored to your project if you want it to stand out in a presentation or poster.
+Do you want them in a **serious** tone or a **fun** tone?
+
 - [List specifications]
 - [List tools required]
 
